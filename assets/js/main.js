@@ -24,7 +24,7 @@ $(document).ready(function(){
 		})
 
 		card_icon.on("click", function(){
-			changeAmount(this);
+			handlePoints(this);
 		})
 
 
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
 	var 
 	handlePoints = function() {
-		var cards = card_icon.is(":checked");
+		var cards = $(".card_number:checked");
 
 		console.log(cards);
 	},
