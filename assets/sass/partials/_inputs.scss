@@ -1,0 +1,59 @@
+// Card inputs
+input.card_number {
+	display: none;
+	& + label {
+		width: $spacing*3.5;
+		height: $spacing*3.5;
+		font-size: 15px;
+		color: #454545;
+		display: table-cell;
+		vertical-align: middle;
+		background: white;
+		border-radius: 50%;
+		position: relative;
+		text-align: center;
+
+		&:before {
+			content: "";
+			height:  $spacing*3;
+			width:  $spacing*3;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			margin-top: $spacing*2.5*-1;
+			margin-left: $spacing*2.5*-1;
+			border: $spacing solid $blueCoin;
+		}
+
+	}
+
+	&:checked + label{
+		
+		&:before {
+			border-color: $redCoin;	
+		}
+		
+		&:after {
+	  		content: attr(multiplier);
+    		color: white;
+    		background: #444;
+    		border-radius: 50%;
+    		width: 18px;
+    		height: 18px;
+    		position: absolute;
+    		top: -7px;
+    		right: -10px;
+    		border: 1px solid white;
+    	}
+	}
+}
+
+#submit-cards {
+	display: block;
+	margin: 0 auto;
+	padding: $spacing $spacing*4;
+	background: $blueCoin;
+	color: white;
+	border: none;
+}

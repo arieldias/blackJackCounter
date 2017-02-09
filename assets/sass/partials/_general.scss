@@ -1,0 +1,96 @@
+//reseting
+
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration:none;
+}
+
+a {
+	color: #000;
+}
+
+body {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8d8d8+0,a3a3a3+100 */
+	background: #d8d8d8; /* Old browsers */
+	background: -moz-linear-gradient(left,  #d8d8d8 0%, #a3a3a3 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #d8d8d8 0%,#a3a3a3 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #d8d8d8 0%,#a3a3a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d8d8d8', endColorstr='#a3a3a3',GradientType=1 ); /* IE6-9 */
+
+	.content {
+		background: white;
+		padding: $spacing;
+		border: 1px solid #989898;
+		margin: 0 auto;
+		display: block;
+		width: 80%;
+		margin-top:	30px;
+	}
+
+	.scoreboard {
+		padding: $spacing;
+		margin-bottom: $spacing*2;
+		background: #CCC;
+		border-radius: 5px;
+
+		.score-sqare {
+			background: white;
+			padding: $spacing/2;
+			border-bottom: 1px solid #313131;
+			border-radius: 5px;
+			margin-right: $spacing;
+			display: inline-block;
+			label {
+				color: $blueCoin;
+				display: block;
+				padding-bottom: 3px;
+				margin-bottom: 3px;
+
+			}
+
+			&:last-child {
+				margin-right: 0px;
+			}
+		}
+	}
+
+	.multiplier {
+		display: none;
+		margin-left: $spacing*6;
+    	margin-top: -40px;
+    	position: relative;
+    	padding: $spacing;
+    	border-radius: 3px;
+    	border: 2px solid #BFBFBF;
+    	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fdfdfd+0,aeaeae+100 */
+		background: #fdfdfd; /* Old browsers */
+		background: -moz-linear-gradient(top,  #fdfdfd 0%, #aeaeae 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top,  #fdfdfd 0%,#aeaeae 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom,  #fdfdfd 0%,#aeaeae 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#aeaeae',GradientType=0 ); /* IE6-9 */
+
+		.multiplier_btn {
+			font-size: 20px;
+			display: block;
+			text-align: center;
+			padding: 0px  $spacing;
+			&.up {
+			  padding-bottom: $spacing/2;
+			  border-bottom: 1px solid #DFDFDF;
+			}
+
+			&.down {
+				padding-top: $spacing/2;
+				border-top: 1px solid #BFBFBF;
+			}
+		}
+
+	}
+
+
+	.card_number:checked ~ .multiplier {
+		display: inline-block;
+	}
+}
+
