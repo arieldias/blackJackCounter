@@ -11,6 +11,7 @@ a {
 }
 
 body {
+	font-family: arial;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d8d8d8+0,a3a3a3+100 */
 	background: #d8d8d8; /* Old browsers */
 	background: -moz-linear-gradient(left,  #d8d8d8 0%, #a3a3a3 100%); /* FF3.6-15 */
@@ -52,6 +53,20 @@ body {
 			&:last-child {
 				margin-right: 0px;
 			}
+
+			&.action {
+				background: #333;
+				color: white;
+				display: block;
+				margin-top: $spacing;
+				text-align: center;
+
+				label {
+					text-align: center;
+					color: white;
+					font-weight: bold;
+				}
+			}
 		}
 	}
 
@@ -80,6 +95,10 @@ body {
 			  border-bottom: 1px solid #DFDFDF;
 			}
 
+			&.disabled {
+				color: #C0C0C0;
+			}
+
 			&.down {
 				padding-top: $spacing/2;
 				border-top: 1px solid #BFBFBF;
@@ -91,6 +110,34 @@ body {
 
 	.card_number:checked ~ .multiplier {
 		display: inline-block;
+	}
+
+	.cards-hand-wrapper {
+		display: block;
+		padding: $spacing 0 ;
+		margin-bottom: $spacing;
+		border-bottom:1px solid #F5F5F5;
+		.hand-player {
+			display: inline-block;
+    		margin-right: $spacing*1.5;
+    		padding: $spacing;
+    		background: #F0F0F0;
+    		border-radius: 3px;
+    		border: 1px solid #CCC;
+    		&:last-child {
+    			margin-right: 0px;
+    		}
+
+    		label {
+    			display: block;
+    		}
+
+    		select {
+    			width: 100%;
+    			padding: $spacing;
+    			margin-top: $spacing;
+    		}
+		}
 	}
 }
 
