@@ -24,7 +24,7 @@ $(document).ready(function(){
 		})
 
 		card_icon.on("click", function(){
-			handlePoints(this);
+			checking(this);
 		})
 
 
@@ -35,12 +35,20 @@ $(document).ready(function(){
 	}
 
 	var 
-	handlePoints = function() {
-		var cards = $(".card_number:checked");
-
-		console.log(cards);
+	checking = function(element) {
+		let el = $(element);
+		if (el.is(":checked")) {
+			updatePonits(parseInt( el.attr('multiplier') * el.attr('val') ))
+		} else {
+			updatePonits(parseInt( el.attr('multiplier') * el.attr('val') ) *-1)
+		}
 	},
 
+	updatePonits = function (entry) {
+		pointsCount = pointsCount + entry;
+		setTotalPoints(pointsCount);
+
+	},
 	getCardPoints = function(card) {
 		let points;
 		switch (card) {
@@ -79,17 +87,20 @@ $(document).ready(function(){
 	changeAmount = function(element)  {
 		let e = $(element);
 
-		let brotherMultiplier = e.parent().siblings('input').attr("multiplier");
+		let brother = e.parent().siblings('input');
+		let brotherMultiplier = brother.attr("multiplier");
 		
 		if (e.hasClass('up')) {			
 			e.parent().siblings().attr('multiplier', parseInt(brotherMultiplier) + 1);
+			updatePonits(parseInt( brother.attr("val")) )
 		} else if(e.hasClass('down')) {
 			if (brotherMultiplier == 1) {
 				e.parent().siblings('input').click();
 			} else {
 				e.parent().siblings().attr('multiplier', parseInt(brotherMultiplier) - 1);
+				updatePonits(parseInt(brother.attr("val"))*-1)
 			}
-
+			
 		} else {
 			alert("ooopps! Something went wrong!! changeAmount function")
 		}
